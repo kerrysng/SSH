@@ -1,0 +1,3414 @@
+{
+  "ReportVersion": "2017.2.2.0",
+  "ReportGuid": "452ec5516f9941e39e4b2c201f27f00f",
+  "ReportName": "Report",
+  "ReportAlias": "Report",
+  "ReportCreated": "/Date(1506263270000+1000)/",
+  "ReportChanged": "/Date(1508914135538+1100)/",
+  "EngineVersion": "EngineV2",
+  "CalculationMode": "Interpretation",
+  "Script": "using System;\r\nusing System.Drawing;\r\nusing System.Windows.Forms;\r\nusing System.Data;\r\nusing Stimulsoft.Controls;\r\nusing Stimulsoft.Base.Drawing;\r\nusing Stimulsoft.Report;\r\nusing Stimulsoft.Report.Dialogs;\r\nusing Stimulsoft.Report.Components;\r\n\r\nnamespace Reports\r\n{\r\n    public class Report : Stimulsoft.Report.StiReport\r\n    {\r\n        public Report()        {\r\n            this.InitializeComponent();\r\n        }\r\n\r\n        #region StiReport Designer generated code - do not modify\r\n\t\t#endregion StiReport Designer generated code - do not modify\r\n    }\r\n}\r\n",
+  "ReferencedAssemblies": {
+    "0": "System.Dll",
+    "1": "System.Drawing.Dll",
+    "2": "System.Windows.Forms.Dll",
+    "3": "System.Data.Dll",
+    "4": "System.Xml.Dll",
+    "5": "Stimulsoft.Controls.Dll",
+    "6": "Stimulsoft.Base.Dll",
+    "7": "Stimulsoft.Report.Dll"
+  },
+  "Dictionary": {
+    "DataSources": {
+      "0": {
+        "Ident": "StiDataTableSource",
+        "Name": "Employee Details",
+        "Alias": "Employee Details",
+        "Columns": {
+          "0": {
+            "Name": "UserAddress",
+            "Index": -1,
+            "NameInSource": "UserAddress",
+            "Alias": "UserAddress",
+            "Type": "System.String"
+          },
+          "1": {
+            "Name": "UserEmail",
+            "Index": -1,
+            "NameInSource": "UserEmail",
+            "Alias": "UserEmail",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "UserFirstName",
+            "Index": -1,
+            "NameInSource": "UserFirstName",
+            "Alias": "UserFirstName",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "UserLastName",
+            "Index": -1,
+            "NameInSource": "UserLastName",
+            "Alias": "UserLastName",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "UserMobile",
+            "Index": -1,
+            "NameInSource": "UserMobile",
+            "Alias": "UserMobile",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "UserPosition",
+            "Index": -1,
+            "NameInSource": "UserPosition",
+            "Alias": "UserPosition",
+            "Type": "System.String"
+          },
+          "6": {
+            "Name": "UserPostcode",
+            "Index": -1,
+            "NameInSource": "UserPostcode",
+            "Alias": "UserPostcode",
+            "Type": "System.String"
+          },
+          "7": {
+            "Name": "UserState",
+            "Index": -1,
+            "NameInSource": "UserState",
+            "Alias": "UserState",
+            "Type": "System.String"
+          },
+          "8": {
+            "Name": "UserSuburb",
+            "Index": -1,
+            "NameInSource": "UserSuburb",
+            "Alias": "UserSuburb",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "test.Employee Details"
+      },
+      "1": {
+        "Ident": "StiDataTableSource",
+        "Name": "Period of Engagement",
+        "Alias": "Period of Engagement",
+        "Columns": {
+          "0": {
+            "Name": "BreakEnd",
+            "Index": -1,
+            "NameInSource": "BreakEnd",
+            "Alias": "BreakEnd",
+            "Type": "System.String"
+          },
+          "1": {
+            "Name": "BreakStart",
+            "Index": -1,
+            "NameInSource": "BreakStart",
+            "Alias": "BreakStart",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "CommDate",
+            "Index": -1,
+            "NameInSource": "CommDate",
+            "Alias": "CommDate",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "CommDate2",
+            "Index": -1,
+            "NameInSource": "CommDate2",
+            "Alias": "CommDate2",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "FinishDate",
+            "Index": -1,
+            "NameInSource": "FinishDate",
+            "Alias": "FinishDate",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "FinishDate2",
+            "Index": -1,
+            "NameInSource": "FinishDate2",
+            "Alias": "FinishDate2",
+            "Type": "System.String"
+          },
+          "6": {
+            "Name": "NoDays",
+            "Index": -1,
+            "NameInSource": "NoDays",
+            "Alias": "NoDays",
+            "Type": "System.Decimal"
+          },
+          "7": {
+            "Name": "NoWeeks",
+            "Index": -1,
+            "NameInSource": "NoWeeks",
+            "Alias": "NoWeeks",
+            "Type": "System.Decimal"
+          }
+        },
+        "NameInSource": "test.Period of Engagement"
+      },
+      "2": {
+        "Ident": "StiDataTableSource",
+        "Name": "Production Details",
+        "Alias": "Production Details",
+        "Columns": {
+          "0": {
+            "Name": "ProdAddress",
+            "Index": -1,
+            "NameInSource": "ProdAddress",
+            "Alias": "ProdAddress",
+            "Type": "System.String"
+          },
+          "1": {
+            "Name": "ProdPostcode",
+            "Index": -1,
+            "NameInSource": "ProdPostcode",
+            "Alias": "ProdPostcode",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "ProdState",
+            "Index": -1,
+            "NameInSource": "ProdState",
+            "Alias": "ProdState",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "ProdSuburb",
+            "Index": -1,
+            "NameInSource": "ProdSuburb",
+            "Alias": "ProdSuburb",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "ProdTitle",
+            "Index": -1,
+            "NameInSource": "ProdTitle",
+            "Alias": "ProdTitle",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "test.Production Details"
+      },
+      "3": {
+        "Ident": "StiDataTableSource",
+        "Name": "Remuneration",
+        "Alias": "Remuneration",
+        "Columns": {
+          "0": {
+            "Name": "AgreedRate",
+            "Index": -1,
+            "NameInSource": "AgreedRate",
+            "Alias": "AgreedRate",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "DaysHours",
+            "Index": -1,
+            "NameInSource": "DaysHours",
+            "Alias": "DaysHours",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "HourlyRate",
+            "Index": -1,
+            "NameInSource": "HourlyRate",
+            "Alias": "HourlyRate",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "Level",
+            "Index": -1,
+            "NameInSource": "Level",
+            "Alias": "Level",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "Premium",
+            "Index": -1,
+            "NameInSource": "Premium",
+            "Alias": "Premium",
+            "Type": "System.Decimal"
+          },
+          "5": {
+            "Name": "TotalHours",
+            "Index": -1,
+            "NameInSource": "TotalHours",
+            "Alias": "TotalHours",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "WeekDays",
+            "Index": -1,
+            "NameInSource": "WeekDays",
+            "Alias": "WeekDays",
+            "Type": "System.Decimal"
+          },
+          "7": {
+            "Name": "WeeklyAvg",
+            "Index": -1,
+            "NameInSource": "WeeklyAvg",
+            "Alias": "WeeklyAvg",
+            "Type": "System.Decimal"
+          }
+        },
+        "NameInSource": "test.Remuneration"
+      },
+      "4": {
+        "Ident": "StiDataTableSource",
+        "Name": "Vehicle Hire",
+        "Alias": "Vehicle Hire",
+        "Columns": {
+          "0": {
+            "Name": "VeCommDate",
+            "Index": -1,
+            "NameInSource": "VeCommDate",
+            "Alias": "VeCommDate",
+            "Type": "System.String"
+          },
+          "1": {
+            "Name": "VeDailyRate",
+            "Index": -1,
+            "NameInSource": "VeDailyRate",
+            "Alias": "VeDailyRate",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "VeDesc",
+            "Index": -1,
+            "NameInSource": "VeDesc",
+            "Alias": "VeDesc",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "VeFinishDate",
+            "Index": -1,
+            "NameInSource": "VeFinishDate",
+            "Alias": "VeFinishDate",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "VeMake",
+            "Index": -1,
+            "NameInSource": "VeMake",
+            "Alias": "VeMake",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "VeModel",
+            "Index": -1,
+            "NameInSource": "VeModel",
+            "Alias": "VeModel",
+            "Type": "System.String"
+          },
+          "6": {
+            "Name": "VeNoDays",
+            "Index": -1,
+            "NameInSource": "VeNoDays",
+            "Alias": "VeNoDays",
+            "Type": "System.Decimal"
+          },
+          "7": {
+            "Name": "VeNoWeeks",
+            "Index": -1,
+            "NameInSource": "VeNoWeeks",
+            "Alias": "VeNoWeeks",
+            "Type": "System.Decimal"
+          },
+          "8": {
+            "Name": "VeReg",
+            "Index": -1,
+            "NameInSource": "VeReg",
+            "Alias": "VeReg",
+            "Type": "System.String"
+          },
+          "9": {
+            "Name": "VeWeeklyRate",
+            "Index": -1,
+            "NameInSource": "VeWeeklyRate",
+            "Alias": "VeWeeklyRate",
+            "Type": "System.Decimal"
+          }
+        },
+        "NameInSource": "test.Vehicle Hire"
+      },
+      "5": {
+        "Ident": "StiDataTableSource",
+        "Name": "Period of Engagement2",
+        "Alias": "Period of Engagement2",
+        "Columns": {
+          "0": {
+            "Name": "BreakEnd",
+            "Index": -1,
+            "NameInSource": "BreakEnd",
+            "Alias": "BreakEnd",
+            "Type": "System.String"
+          },
+          "1": {
+            "Name": "BreakStart",
+            "Index": -1,
+            "NameInSource": "BreakStart",
+            "Alias": "BreakStart",
+            "Type": "System.String"
+          },
+          "2": {
+            "Name": "CommDate",
+            "Index": -1,
+            "NameInSource": "CommDate",
+            "Alias": "CommDate",
+            "Type": "System.String"
+          },
+          "3": {
+            "Name": "CommDate2",
+            "Index": -1,
+            "NameInSource": "CommDate2",
+            "Alias": "CommDate2",
+            "Type": "System.String"
+          },
+          "4": {
+            "Name": "FinishDate",
+            "Index": -1,
+            "NameInSource": "FinishDate",
+            "Alias": "FinishDate",
+            "Type": "System.String"
+          },
+          "5": {
+            "Name": "FinishDate2",
+            "Index": -1,
+            "NameInSource": "FinishDate2",
+            "Alias": "FinishDate2",
+            "Type": "System.String"
+          },
+          "6": {
+            "Name": "NoDays",
+            "Index": -1,
+            "NameInSource": "NoDays",
+            "Alias": "NoDays",
+            "Type": "System.Decimal"
+          },
+          "7": {
+            "Name": "NoWeeks",
+            "Index": -1,
+            "NameInSource": "NoWeeks",
+            "Alias": "NoWeeks",
+            "Type": "System.Decimal"
+          }
+        },
+        "NameInSource": "test2.Period of Engagement"
+      },
+      "6": {
+        "Ident": "StiDataTableSource",
+        "Name": "Remuneration2",
+        "Alias": "Remuneration2",
+        "Columns": {
+          "0": {
+            "Name": "AgreedRate",
+            "Index": -1,
+            "NameInSource": "AgreedRate",
+            "Alias": "AgreedRate",
+            "Type": "System.Decimal"
+          },
+          "1": {
+            "Name": "DaysHours",
+            "Index": -1,
+            "NameInSource": "DaysHours",
+            "Alias": "DaysHours",
+            "Type": "System.Decimal"
+          },
+          "2": {
+            "Name": "HourlyRate",
+            "Index": -1,
+            "NameInSource": "HourlyRate",
+            "Alias": "HourlyRate",
+            "Type": "System.Decimal"
+          },
+          "3": {
+            "Name": "Level",
+            "Index": -1,
+            "NameInSource": "Level",
+            "Alias": "Level",
+            "Type": "System.Decimal"
+          },
+          "4": {
+            "Name": "Premium",
+            "Index": -1,
+            "NameInSource": "Premium",
+            "Alias": "Premium",
+            "Type": "System.Decimal"
+          },
+          "5": {
+            "Name": "TotalHours",
+            "Index": -1,
+            "NameInSource": "TotalHours",
+            "Alias": "TotalHours",
+            "Type": "System.Decimal"
+          },
+          "6": {
+            "Name": "WeekDays",
+            "Index": -1,
+            "NameInSource": "WeekDays",
+            "Alias": "WeekDays",
+            "Type": "System.Decimal"
+          },
+          "7": {
+            "Name": "WeeklyAvg",
+            "Index": -1,
+            "NameInSource": "WeeklyAvg",
+            "Alias": "WeeklyAvg",
+            "Type": "System.Decimal"
+          }
+        },
+        "NameInSource": "test2.Remuneration"
+      },
+      "7": {
+        "Ident": "StiDataTableSource",
+        "Name": "Data",
+        "Alias": "Data",
+        "Columns": {
+          "0": {
+            "Name": "TotalHours",
+            "Index": -1,
+            "NameInSource": "TotalHours",
+            "Alias": "TotalHours",
+            "Type": "System.Double"
+          },
+          "1": {
+            "Name": "HourlyRate",
+            "Index": -1,
+            "NameInSource": "HourlyRate",
+            "Alias": "HourlyRate",
+            "Type": "System.Double"
+          },
+          "2": {
+            "Name": "WeeklyAvg",
+            "Index": -1,
+            "NameInSource": "WeeklyAvg",
+            "Alias": "WeeklyAvg",
+            "Type": "System.Double"
+          },
+          "3": {
+            "Name": "CommDate",
+            "Index": -1,
+            "NameInSource": "CommDate",
+            "Alias": "CommDate",
+            "Type": "System.DateTime"
+          },
+          "4": {
+            "Name": "FinishDate",
+            "Index": -1,
+            "NameInSource": "FinishDate",
+            "Alias": "FinishDate",
+            "Type": "System.DateTime"
+          },
+          "5": {
+            "Name": "WeekDays",
+            "Index": -1,
+            "NameInSource": "WeekDays",
+            "Alias": "WeekDays",
+            "Type": "System.Double"
+          },
+          "6": {
+            "Name": "NoWeeks",
+            "Index": -1,
+            "NameInSource": "NoWeeks",
+            "Alias": "NoWeeks",
+            "Type": "System.Double"
+          },
+          "7": {
+            "Name": "NoDays",
+            "Index": -1,
+            "NameInSource": "NoDays",
+            "Alias": "NoDays",
+            "Type": "System.Double"
+          },
+          "8": {
+            "Name": "EqWeeklyRate",
+            "Index": -1,
+            "NameInSource": "EqWeeklyRate",
+            "Alias": "EqWeeklyRate",
+            "Type": "System.Double"
+          },
+          "9": {
+            "Name": "EqCommDate",
+            "Index": -1,
+            "NameInSource": "EqCommDate",
+            "Alias": "EqCommDate",
+            "Type": "System.String"
+          },
+          "10": {
+            "Name": "EqFinishDate",
+            "Index": -1,
+            "NameInSource": "EqFinishDate",
+            "Alias": "EqFinishDate",
+            "Type": "System.String"
+          },
+          "11": {
+            "Name": "EqNoWeeks",
+            "Index": -1,
+            "NameInSource": "EqNoWeeks",
+            "Alias": "EqNoWeeks",
+            "Type": "System.String"
+          },
+          "12": {
+            "Name": "EqNoDays",
+            "Index": -1,
+            "NameInSource": "EqNoDays",
+            "Alias": "EqNoDays",
+            "Type": "System.String"
+          },
+          "13": {
+            "Name": "EqDailyRate",
+            "Index": -1,
+            "NameInSource": "EqDailyRate",
+            "Alias": "EqDailyRate",
+            "Type": "System.Double"
+          },
+          "14": {
+            "Name": "VeWeeklyRate",
+            "Index": -1,
+            "NameInSource": "VeWeeklyRate",
+            "Alias": "VeWeeklyRate",
+            "Type": "System.Double"
+          },
+          "15": {
+            "Name": "VeCommDate",
+            "Index": -1,
+            "NameInSource": "VeCommDate",
+            "Alias": "VeCommDate",
+            "Type": "System.String"
+          },
+          "16": {
+            "Name": "VeFinishDate",
+            "Index": -1,
+            "NameInSource": "VeFinishDate",
+            "Alias": "VeFinishDate",
+            "Type": "System.String"
+          },
+          "17": {
+            "Name": "VeNoWeeks",
+            "Index": -1,
+            "NameInSource": "VeNoWeeks",
+            "Alias": "VeNoWeeks",
+            "Type": "System.String"
+          },
+          "18": {
+            "Name": "VeNoDays",
+            "Index": -1,
+            "NameInSource": "VeNoDays",
+            "Alias": "VeNoDays",
+            "Type": "System.String"
+          },
+          "19": {
+            "Name": "VeDailyRate",
+            "Index": -1,
+            "NameInSource": "VeDailyRate",
+            "Alias": "VeDailyRate",
+            "Type": "System.Double"
+          },
+          "20": {
+            "Name": "ProdTitle",
+            "Index": -1,
+            "NameInSource": "ProdTitle",
+            "Alias": "ProdTitle",
+            "Type": "System.String"
+          },
+          "21": {
+            "Name": "ProdAddress",
+            "Index": -1,
+            "NameInSource": "ProdAddress",
+            "Alias": "ProdAddress",
+            "Type": "System.String"
+          },
+          "22": {
+            "Name": "ProdSuburb",
+            "Index": -1,
+            "NameInSource": "ProdSuburb",
+            "Alias": "ProdSuburb",
+            "Type": "System.String"
+          },
+          "23": {
+            "Name": "ProdState",
+            "Index": -1,
+            "NameInSource": "ProdState",
+            "Alias": "ProdState",
+            "Type": "System.String"
+          },
+          "24": {
+            "Name": "ProdPostcode",
+            "Index": -1,
+            "NameInSource": "ProdPostcode",
+            "Alias": "ProdPostcode",
+            "Type": "System.Double"
+          },
+          "25": {
+            "Name": "UserFirstName",
+            "Index": -1,
+            "NameInSource": "UserFirstName",
+            "Alias": "UserFirstName",
+            "Type": "System.String"
+          },
+          "26": {
+            "Name": "UserMiddleName",
+            "Index": -1,
+            "NameInSource": "UserMiddleName",
+            "Alias": "UserMiddleName",
+            "Type": "System.String"
+          },
+          "27": {
+            "Name": "UserLastName",
+            "Index": -1,
+            "NameInSource": "UserLastName",
+            "Alias": "UserLastName",
+            "Type": "System.String"
+          },
+          "28": {
+            "Name": "ContractDate",
+            "Index": -1,
+            "NameInSource": "ContractDate",
+            "Alias": "ContractDate",
+            "Type": "System.DateTime"
+          },
+          "29": {
+            "Name": "UserPosition",
+            "Index": -1,
+            "NameInSource": "UserPosition",
+            "Alias": "UserPosition",
+            "Type": "System.String"
+          },
+          "30": {
+            "Name": "UserAddress",
+            "Index": -1,
+            "NameInSource": "UserAddress",
+            "Alias": "UserAddress",
+            "Type": "System.String"
+          },
+          "31": {
+            "Name": "UserEmail",
+            "Index": -1,
+            "NameInSource": "UserEmail",
+            "Alias": "UserEmail",
+            "Type": "System.String"
+          },
+          "32": {
+            "Name": "UserSuburb",
+            "Index": -1,
+            "NameInSource": "UserSuburb",
+            "Alias": "UserSuburb",
+            "Type": "System.String"
+          },
+          "33": {
+            "Name": "UserState",
+            "Index": -1,
+            "NameInSource": "UserState",
+            "Alias": "UserState",
+            "Type": "System.String"
+          },
+          "34": {
+            "Name": "UserPostcode",
+            "Index": -1,
+            "NameInSource": "UserPostcode",
+            "Alias": "UserPostcode",
+            "Type": "System.Double"
+          },
+          "35": {
+            "Name": "UserMobile",
+            "Index": -1,
+            "NameInSource": "UserMobile",
+            "Alias": "UserMobile",
+            "Type": "System.Double"
+          },
+          "36": {
+            "Name": "signature01",
+            "Index": -1,
+            "NameInSource": "signature01",
+            "Alias": "signature01",
+            "Type": "System.String"
+          },
+          "37": {
+            "Name": "userSig",
+            "Index": -1,
+            "NameInSource": "userSig",
+            "Alias": "userSig",
+            "Type": "System.String"
+          },
+          "38": {
+            "Name": "eSigIP",
+            "Index": -1,
+            "NameInSource": "eSigIP",
+            "Alias": "eSigIP",
+            "Type": "System.String"
+          },
+          "39": {
+            "Name": "eSigDate",
+            "Index": -1,
+            "NameInSource": "eSigDate",
+            "Alias": "eSigDate",
+            "Type": "System.DateTime"
+          },
+          "40": {
+            "Name": "Level",
+            "Index": -1,
+            "NameInSource": "Level",
+            "Alias": "Level",
+            "Type": "System.Double"
+          },
+          "41": {
+            "Name": "AgreedRate",
+            "Index": -1,
+            "NameInSource": "AgreedRate",
+            "Alias": "AgreedRate",
+            "Type": "System.Double"
+          },
+          "42": {
+            "Name": "DayHours",
+            "Index": -1,
+            "NameInSource": "DayHours",
+            "Alias": "DayHours",
+            "Type": "System.Double"
+          },
+          "43": {
+            "Name": "IncOvertime",
+            "Index": -1,
+            "NameInSource": "IncOvertime",
+            "Alias": "IncOvertime",
+            "Type": "System.String"
+          },
+          "44": {
+            "Name": "Premium",
+            "Index": -1,
+            "NameInSource": "Premium",
+            "Alias": "Premium",
+            "Type": "System.Double"
+          },
+          "45": {
+            "Name": "PeriodBreaks",
+            "Index": -1,
+            "NameInSource": "PeriodBreaks",
+            "Alias": "PeriodBreaks",
+            "Type": "System.String"
+          },
+          "46": {
+            "Name": "VeReg",
+            "Index": -1,
+            "NameInSource": "VeReg",
+            "Alias": "VeReg",
+            "Type": "System.String"
+          },
+          "47": {
+            "Name": "VeMake",
+            "Index": -1,
+            "NameInSource": "VeMake",
+            "Alias": "VeMake",
+            "Type": "System.String"
+          },
+          "48": {
+            "Name": "VeModel",
+            "Index": -1,
+            "NameInSource": "VeModel",
+            "Alias": "VeModel",
+            "Type": "System.String"
+          },
+          "49": {
+            "Name": "VeDesc",
+            "Index": -1,
+            "NameInSource": "VeDesc",
+            "Alias": "VeDesc",
+            "Type": "System.String"
+          },
+          "50": {
+            "Name": "EqDesc",
+            "Index": -1,
+            "NameInSource": "EqDesc",
+            "Alias": "EqDesc",
+            "Type": "System.String"
+          },
+          "51": {
+            "Name": "EqDesc2",
+            "Index": -1,
+            "NameInSource": "EqDesc2",
+            "Alias": "EqDesc2",
+            "Type": "System.String"
+          },
+          "52": {
+            "Name": "EqDesc3",
+            "Index": -1,
+            "NameInSource": "EqDesc3",
+            "Alias": "EqDesc3",
+            "Type": "System.String"
+          },
+          "53": {
+            "Name": "PetrolAllow",
+            "Index": -1,
+            "NameInSource": "PetrolAllow",
+            "Alias": "PetrolAllow",
+            "Type": "System.String"
+          },
+          "54": {
+            "Name": "MobileAllow",
+            "Index": -1,
+            "NameInSource": "MobileAllow",
+            "Alias": "MobileAllow",
+            "Type": "System.String"
+          },
+          "55": {
+            "Name": "SpecialConditions",
+            "Index": -1,
+            "NameInSource": "SpecialConditions",
+            "Alias": "SpecialConditions",
+            "Type": "System.String"
+          }
+        },
+        "NameInSource": "contract2.Data"
+      }
+    },
+    "Databases": {
+      "0": {
+        "Ident": "StiJsonDatabase",
+        "Name": "test",
+        "Alias": "test",
+        "PathData": "C:\\test.json"
+      },
+      "1": {
+        "Ident": "StiJsonDatabase",
+        "Name": "test2",
+        "Alias": "test2",
+        "PathData": "C:\\test.json"
+      },
+      "2": {
+        "Ident": "StiJsonDatabase",
+        "Name": "contract2",
+        "Alias": "contract2",
+        "PathData": "C:\\Users\\KSNG\\Desktop\\Reports\\Crew\\contract2.json"
+      }
+    }
+  },
+  "Pages": {
+    "0": {
+      "Ident": "StiPage",
+      "Name": "Page1",
+      "Guid": "04dda0481cf446bbbc1e3a61613124a2",
+      "Interaction": {
+        "Ident": "StiInteraction"
+      },
+      "Border": ";;2;;;;;solid:Black",
+      "Brush": "solid:",
+      "Components": {
+        "0": {
+          "Ident": "StiPageFooterBand",
+          "Name": "PageFooterBand1",
+          "ClientRectangle": "0,42,19,1.4",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text60",
+              "CanShrink": true,
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "0,-0.2,6.8,2",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "Endemol Shine Australia\r\n42-44 Victoria Street\r\nMcMahons Point NSW 2060\r\nABN 20 136 451 208\r\n+61 (02)8587 1111\r\nendemolshine.com.au "
+              },
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:147,137,83",
+              "Type": "Expression"
+            }
+          }
+        },
+        "1": {
+          "Ident": "StiDataBand",
+          "Name": "DataBand1",
+          "ClientRectangle": "0,0.4,19,13.4",
+          "ComponentPlacement": "d.Page1",
+          "Interaction": {
+            "Ident": "StiBandInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:",
+          "Components": {
+            "0": {
+              "Ident": "StiPanel",
+              "Name": "Panel1",
+              "CanShrink": true,
+              "CanGrow": true,
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "0.6,2.2,17.8,6.6",
+              "ComponentPlacement": "d.DataBand1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "Components": {
+                "0": {
+                  "Ident": "StiText",
+                  "Name": "Text3",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "0,1.2,4,0.8",
+                  "ComponentPlacement": "d.Panel1",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "PRODUCTION:"
+                  },
+                  "Font": ";10;Bold;",
+                  "Border": ";;;;;;;solid:0,0,0",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:0,0,0",
+                  "Type": "Expression"
+                },
+                "1": {
+                  "Ident": "StiText",
+                  "Name": "Text4",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "4.6,1.2,13.2,0.8",
+                  "ComponentPlacement": "d.Panel1",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "{Data.ProdTitle} (the \"Production\")"
+                  },
+                  "Font": ";10;;",
+                  "Border": ";;;;;;;solid:0,0,0",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:0,0,0",
+                  "Type": "Expression"
+                },
+                "2": {
+                  "Ident": "StiText",
+                  "Name": "Text5",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "0,2.2,4.4,0.8",
+                  "ComponentPlacement": "d.Panel1",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "PRODUCTION COMPANY:"
+                  },
+                  "Font": ";10;Bold;",
+                  "Border": ";;;;;;;solid:0,0,0",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:0,0,0",
+                  "Type": "Expression"
+                },
+                "3": {
+                  "Ident": "StiText",
+                  "Name": "Text6",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "4.6,2.2,13.2,0.8",
+                  "ComponentPlacement": "d.Panel1",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "Endemol Shine Australia Pty Ltd (the \"Production Company\" / \"Employer\")"
+                  },
+                  "Font": ";10;Bold;",
+                  "Border": ";;;;;;;solid:Black",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression"
+                },
+                "4": {
+                  "Ident": "StiText",
+                  "Name": "Text2",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "0,0,8.8,1",
+                  "ComponentPlacement": "d.Panel1",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "Crew Contract PAYG"
+                  },
+                  "Font": "Arial Black;16;Bold;",
+                  "Border": ";;;;;;;solid:Black",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:117,112,112",
+                  "Type": "Expression"
+                },
+                "5": {
+                  "Ident": "StiText",
+                  "Name": "Text7",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "0,3.2,4,0.8",
+                  "ComponentPlacement": "d.Panel1",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "ABN:"
+                  },
+                  "Font": ";10;Bold;",
+                  "Border": ";;;;;;;solid:Black",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression"
+                },
+                "6": {
+                  "Ident": "StiText",
+                  "Name": "Text8",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "4.6,3.2,13.2,0.8",
+                  "ComponentPlacement": "d.Panel1",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "ABN: 20 136 451 208"
+                  },
+                  "Font": ";10;;",
+                  "Border": ";;;;;;;solid:0,0,0",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:0,0,0",
+                  "Type": "Expression"
+                },
+                "7": {
+                  "Ident": "StiText",
+                  "Name": "Text9",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "0,4.2,4,0.8",
+                  "ComponentPlacement": "d.Panel1",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "ADDRESS:"
+                  },
+                  "Font": ";10;Bold;",
+                  "Border": ";;;;;;;solid:Black",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression"
+                },
+                "8": {
+                  "Ident": "StiText",
+                  "Name": "Text10",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "4.6,4.2,13.2,1",
+                  "ComponentPlacement": "d.Panel1",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "42-44 Victoria Street\r\nMcMahons Point NSW 2060"
+                  },
+                  "Font": ";10;;",
+                  "Border": ";;;;;;;solid:Black",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression"
+                },
+                "9": {
+                  "Ident": "StiText",
+                  "Name": "Text11",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "0,5.6,4.4,0.8",
+                  "ComponentPlacement": "d.Panel1",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "PRODUCTION OFFICE:"
+                  },
+                  "Font": ";10;Bold;",
+                  "Border": ";;;;;;;solid:Black",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression"
+                },
+                "10": {
+                  "Ident": "StiText",
+                  "Name": "Text12",
+                  "CanGrow": true,
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "4.6,5.6,13.2,0.8",
+                  "ComponentPlacement": "d.Panel1",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "{Data.ProdAddress} {Data.ProdSuburb} {Data.ProdState} {Data.ProdPostcode}"
+                  },
+                  "Border": ";;;;;;;solid:Black",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "TextOptions": {
+                    "WordWrap": true
+                  },
+                  "Type": "Expression"
+                }
+              }
+            },
+            "1": {
+              "Ident": "StiPanel",
+              "Name": "Panel2",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "0.6,8.8,17.8,4.6",
+              "ComponentPlacement": "d.DataBand1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Border": "All;;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "Components": {
+                "0": {
+                  "Ident": "StiText",
+                  "Name": "Text13",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "0,0.2,4.2,0.6",
+                  "ComponentPlacement": "d.Panel2",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "EMPLOYEE DETAILS:"
+                  },
+                  "Font": ";10;Bold;",
+                  "Border": ";;;;;;;solid:0,0,0",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression"
+                },
+                "1": {
+                  "Ident": "StiText",
+                  "Name": "Text14",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "0,0.8,3,0.6",
+                  "ComponentPlacement": "d.Panel2",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "NAME:"
+                  },
+                  "Font": ";10;Bold;",
+                  "Border": ";;;;;;;solid:0,0,0",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression"
+                },
+                "2": {
+                  "Ident": "StiText",
+                  "Name": "Text15",
+                  "CanGrow": true,
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "4.6,0.8,12.8,0.6",
+                  "ComponentPlacement": "d.Panel2",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "{Data.UserFirstName} {Data.UserMiddleName} {Data.UserLastName}"
+                  },
+                  "Border": ";;;;;;;solid:Black",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression"
+                },
+                "3": {
+                  "Ident": "StiText",
+                  "Name": "Text16",
+                  "Guid": "8a6d9ae887da8bd29dca21f5badc403c",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "0,1.4,3,0.6",
+                  "ComponentPlacement": "d.Panel2",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "POSITION:"
+                  },
+                  "Font": ";10;Bold;",
+                  "Border": ";;;;;;;solid:0,0,0",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression"
+                },
+                "4": {
+                  "Ident": "StiText",
+                  "Name": "Text17",
+                  "Guid": "2faa7d10d61d980fa77f5baf0ec2c0f7",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "4.6,1.4,5,0.6",
+                  "ComponentPlacement": "d.Panel2",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "{Data.UserPosition}"
+                  },
+                  "Border": ";;;;;;;solid:Black",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression"
+                },
+                "5": {
+                  "Ident": "StiText",
+                  "Name": "Text18",
+                  "Guid": "7cfdaf2daffd1e94f03301f146837a76",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "9.8,1.4,2,0.6",
+                  "ComponentPlacement": "d.Panel2",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "EMAIL:"
+                  },
+                  "Font": ";10;Bold;",
+                  "Border": ";;;;;;;solid:0,0,0",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression"
+                },
+                "6": {
+                  "Ident": "StiText",
+                  "Name": "Text19",
+                  "Guid": "b581656c087baf7c59231bd7068ede45",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "12.2,1.4,5.2,0.6",
+                  "ComponentPlacement": "d.Panel2",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "{Data.UserEmail}"
+                  },
+                  "Border": ";;;;;;;solid:Black",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression"
+                },
+                "7": {
+                  "Ident": "StiText",
+                  "Name": "Text20",
+                  "Guid": "dbd7960f20750b54bc75dcedcd20262f",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "0,2.2,3,0.6",
+                  "ComponentPlacement": "d.Panel2",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "ADDRESS:"
+                  },
+                  "Font": ";10;Bold;",
+                  "Border": ";;;;;;;solid:0,0,0",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression"
+                },
+                "8": {
+                  "Ident": "StiText",
+                  "Name": "Text21",
+                  "Guid": "e920f05add347968967b5d4ea504bddb",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "4.6,2.2,12.8,0.6",
+                  "ComponentPlacement": "d.Panel2",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "{Data.UserAddress}"
+                  },
+                  "Border": ";;;;;;;solid:Black",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression"
+                },
+                "9": {
+                  "Ident": "StiText",
+                  "Name": "Text22",
+                  "Guid": "188f37ca1380e6fbc4060c8cf4a15c4b",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "0,3,3,0.6",
+                  "ComponentPlacement": "d.Panel2",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "SUBURB:"
+                  },
+                  "Font": ";10;Bold;",
+                  "Border": ";;;;;;;solid:0,0,0",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression"
+                },
+                "10": {
+                  "Ident": "StiText",
+                  "Name": "Text23",
+                  "Guid": "73556f5570ebabba4c0c38dca6c49dc3",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "4.6,3,5,0.6",
+                  "ComponentPlacement": "d.Panel2",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "{Data.UserSuburb}"
+                  },
+                  "Border": ";;;;;;;solid:Black",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression"
+                },
+                "11": {
+                  "Ident": "StiText",
+                  "Name": "Text24",
+                  "Guid": "434f66f6c9f43890cac869ab7f67aff3",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "9.8,3,2,0.6",
+                  "ComponentPlacement": "d.Panel2",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "STATE:"
+                  },
+                  "Font": ";10;Bold;",
+                  "Border": ";;;;;;;solid:0,0,0",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression"
+                },
+                "12": {
+                  "Ident": "StiText",
+                  "Name": "Text25",
+                  "Guid": "1d892870c0c78bf7245929758ee5b33d",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "12.2,3,5.2,0.6",
+                  "ComponentPlacement": "d.Panel2",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "{Data.UserState}"
+                  },
+                  "Border": ";;;;;;;solid:Black",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression"
+                },
+                "13": {
+                  "Ident": "StiText",
+                  "Name": "Text26",
+                  "Guid": "bb63ff41c5d10ee18e159952ccefe03f",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "0,3.8,3,0.6",
+                  "ComponentPlacement": "d.Panel2",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "POSTCODE:"
+                  },
+                  "Font": ";10;Bold;",
+                  "Border": ";;;;;;;solid:0,0,0",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression"
+                },
+                "14": {
+                  "Ident": "StiText",
+                  "Name": "Text27",
+                  "Guid": "e257852cd6c5a3408896852993779c46",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "4.6,3.8,3.4,0.6",
+                  "ComponentPlacement": "d.Panel2",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "{Data.UserPostcode}"
+                  },
+                  "Border": ";;;;;;;solid:Black",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression"
+                },
+                "15": {
+                  "Ident": "StiText",
+                  "Name": "Text28",
+                  "Guid": "7110d014f56ea7470fca9b5e146b9d5e",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "8.4,3.8,3,0.6",
+                  "ComponentPlacement": "d.Panel2",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "MOBILE PHONE:"
+                  },
+                  "Font": ";10;Bold;",
+                  "Border": ";;;;;;;solid:0,0,0",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression"
+                },
+                "16": {
+                  "Ident": "StiText",
+                  "Name": "Text29",
+                  "Guid": "2b9a05cb2541a447f7c70126fdf90dd7",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "12.2,3.8,5.2,0.6",
+                  "ComponentPlacement": "d.Panel2",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "{Data.UserMobile}"
+                  },
+                  "Border": ";;;;;;;solid:Black",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression"
+                }
+              }
+            },
+            "2": {
+              "Ident": "StiText",
+              "Name": "Text1",
+              "Guid": "de388b5a065f434c996c95e12316570d",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "0.6,0,8.8,2.2",
+              "ComponentPlacement": "ph.PageHeaderBand1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "EndemolShine\r\nAustralia"
+              },
+              "Font": "Arial Black;22;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:50,63,79",
+              "Type": "Expression"
+            }
+          },
+          "DataSourceName": "Data"
+        },
+        "2": {
+          "Ident": "StiDataBand",
+          "Name": "DataBand2",
+          "ClientRectangle": "0,14.6,19,15.8",
+          "ComponentPlacement": "d.Page1",
+          "Interaction": {
+            "Ident": "StiBandInteraction"
+          },
+          "Border": ";;;;;;;solid:0,0,0",
+          "Brush": "solid:",
+          "Components": {
+            "0": {
+              "Ident": "StiPanel",
+              "Name": "Panel3",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "0.6,0.2,17.8,15.4",
+              "ComponentPlacement": "d.DataBand2",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "Components": {
+                "0": {
+                  "Ident": "StiText",
+                  "Name": "Text30",
+                  "CanShrink": true,
+                  "CanGrow": true,
+                  "GrowToHeight": true,
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "0,0.2,17.8,0.8",
+                  "ComponentPlacement": "d.Panel3",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "This Contract dated {Today} &nbsp;is between the abovementioned Production Company (the \"Employer\") of the one part and the Employee of the other part."
+                  },
+                  "CanBreak": true,
+                  "Border": ";;;;;;;solid:0,0,0",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "TextOptions": {
+                    "WordWrap": true
+                  },
+                  "Type": "Expression",
+                  "TextQuality": "Wysiwyg",
+                  "AllowHtmlTags": true
+                },
+                "1": {
+                  "Ident": "StiText",
+                  "Name": "Text31",
+                  "Guid": "be8e03b6abb22ed198cc3e03ba5d4551",
+                  "CanGrow": true,
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "0,1,17.8,1.2",
+                  "ComponentPlacement": "d.Panel3",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "A.  This Contract incorporates the provisions of the <i><b>Motion Picture Production Agreement 2010</b> between the Employer and the Media Entertainment and Arts Alliance</i> (the \"Agreement\") except to the extent that the terms of this Contract are more favourable to the Employee. A copy of the Agreement is available at the Production Office."
+                  },
+                  "Border": ";;;;;;;solid:0,0,0",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "TextOptions": {
+                    "WordWrap": true
+                  },
+                  "Type": "Expression",
+                  "TextQuality": "Wysiwyg",
+                  "AllowHtmlTags": true
+                },
+                "2": {
+                  "Ident": "StiText",
+                  "Name": "Text32",
+                  "Guid": "cc99b3330b9bbcb33dbefcb60550e705",
+                  "CanShrink": true,
+                  "CanGrow": true,
+                  "GrowToHeight": true,
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "0,2.2,17.8,1",
+                  "ComponentPlacement": "d.Panel3",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "B. &nbsp;The Employer, a current and fully paid member of the Screen Producers Association of Australia (SPAA) has agreed to engage the Employee to undertake the specific tasks of {Data.UserPosition} for the above named Production."
+                  },
+                  "Border": ";;;;;;;solid:0,0,0",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "TextOptions": {
+                    "WordWrap": true
+                  },
+                  "Type": "Expression",
+                  "TextQuality": "Wysiwyg",
+                  "AllowHtmlTags": true
+                },
+                "3": {
+                  "Ident": "StiText",
+                  "Name": "Text33",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "0,3.4,4.6,0.6",
+                  "ComponentPlacement": "d.Panel3",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "1.  PERIOD OF ENGAGEMENT:"
+                  },
+                  "Font": ";9;Bold;",
+                  "Border": ";;;;;;;solid:0,0,0",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression"
+                },
+                "4": {
+                  "Ident": "StiText",
+                  "Name": "Text34",
+                  "Guid": "2abead38e1f2aff57b0bce4007c4efb9",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "0,4,3,0.4",
+                  "ComponentPlacement": "d.Panel3",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "WEEKLY:"
+                  },
+                  "Font": ";9;;",
+                  "Border": ";;;;;;;solid:0,0,0",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression"
+                },
+                "5": {
+                  "Ident": "StiText",
+                  "Name": "Text35",
+                  "Guid": "8ba2981d55e373c2ae6b5d6b0d4a0c5b",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "0,4.4,3,0.6",
+                  "ComponentPlacement": "d.Panel3",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "No. of weeks:"
+                  },
+                  "Font": ";9;;",
+                  "Border": ";;;;;;;solid:0,0,0",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression"
+                },
+                "6": {
+                  "Ident": "StiText",
+                  "Name": "Text36",
+                  "Guid": "e73a45945e85453f5505adc101d79953",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "4.6,4.4,3.4,0.6",
+                  "ComponentPlacement": "d.Panel3",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "{Data.NoWeeks}"
+                  },
+                  "Border": ";;;;;;;solid:Black",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "DataColumn"
+                },
+                "7": {
+                  "Ident": "StiText",
+                  "Name": "Text37",
+                  "Guid": "a6bcfbe0abe742a2678d921de60ae815",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "0,5,3,0.6",
+                  "ComponentPlacement": "d.Panel3",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "Commencing on:"
+                  },
+                  "Font": ";9;;",
+                  "Border": ";;;;;;;solid:0,0,0",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression"
+                },
+                "8": {
+                  "Ident": "StiText",
+                  "Name": "Text38",
+                  "Guid": "3ac0d6143dd55004d156f542547ab31e",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "4.6,5,3.4,0.6",
+                  "ComponentPlacement": "d.Panel3",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "{Data.CommDate}"
+                  },
+                  "Border": ";;;;;;;solid:Black",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression",
+                  "TextFormat": {
+                    "Ident": "StiDateFormatService"
+                  }
+                },
+                "9": {
+                  "Ident": "StiText",
+                  "Name": "Text39",
+                  "Guid": "bbcd2c241ab97f49470bcdaccb010855",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "0,5.6,3,0.6",
+                  "ComponentPlacement": "d.Panel3",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "Finishing on:"
+                  },
+                  "Font": ";9;;",
+                  "Border": ";;;;;;;solid:0,0,0",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression"
+                },
+                "10": {
+                  "Ident": "StiText",
+                  "Name": "Text40",
+                  "Guid": "acbe95386f2c63a7fdb8c6b831f04b9c",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "4.6,5.6,3.4,0.6",
+                  "ComponentPlacement": "d.Panel3",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "{Data.FinishDate}"
+                  },
+                  "Border": ";;;;;;;solid:Black",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression",
+                  "TextFormat": {
+                    "Ident": "StiDateFormatService"
+                  }
+                },
+                "11": {
+                  "Ident": "StiText",
+                  "Name": "Text41",
+                  "Guid": "8b89c729c972a93272455216886d5856",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "9.6,4.4,3,0.6",
+                  "ComponentPlacement": "d.Panel3",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "No. of days:"
+                  },
+                  "Font": ";9;;",
+                  "Border": ";;;;;;;solid:0,0,0",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression"
+                },
+                "12": {
+                  "Ident": "StiText",
+                  "Name": "Text42",
+                  "Guid": "41050afbe90bfe6de346b1dd4f178ba1",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "14,4.4,3.4,0.6",
+                  "ComponentPlacement": "d.Panel3",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "{Data.NoDays}"
+                  },
+                  "Border": ";;;;;;;solid:Black",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression"
+                },
+                "13": {
+                  "Ident": "StiText",
+                  "Name": "Text43",
+                  "Guid": "43a7c678a19a00e2f871ca31fd1fd6bc",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "0,6.4,3,0.4",
+                  "ComponentPlacement": "d.Panel3",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "then"
+                  },
+                  "Font": ";9;;",
+                  "Border": ";;;;;;;solid:0,0,0",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression"
+                },
+                "14": {
+                  "Ident": "StiText",
+                  "Name": "Text44",
+                  "Guid": "5876c8aff798749ada103d1c1365a2cc",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "0,7,3,0.6",
+                  "ComponentPlacement": "d.Panel3",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "Commencing on:"
+                  },
+                  "Font": ";9;;",
+                  "Border": ";;;;;;;solid:0,0,0",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression"
+                },
+                "15": {
+                  "Ident": "StiText",
+                  "Name": "Text45",
+                  "Guid": "6d2aca40b70b41126f828631d4752924",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "4.6,7,3.4,0.6",
+                  "ComponentPlacement": "d.Panel3",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Border": ";;;;;;;solid:Black",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression"
+                },
+                "16": {
+                  "Ident": "StiText",
+                  "Name": "Text46",
+                  "Guid": "04046b5971d609e6dc82929598772765",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "0,7.6,3,0.6",
+                  "ComponentPlacement": "d.Panel3",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "Finishing on:"
+                  },
+                  "Font": ";9;;",
+                  "Border": ";;;;;;;solid:0,0,0",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression"
+                },
+                "17": {
+                  "Ident": "StiText",
+                  "Name": "Text47",
+                  "Guid": "52e70e47218738288238d844fd24ca6c",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "4.6,7.6,3.4,0.6",
+                  "ComponentPlacement": "d.Panel3",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Border": ";;;;;;;solid:Black",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression"
+                },
+                "18": {
+                  "Ident": "StiText",
+                  "Name": "Text48",
+                  "Guid": "1714eabeb1645791d48594765dab4c69",
+                  "CanShrink": true,
+                  "CanGrow": true,
+                  "GrowToHeight": true,
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "0,8.2,17.8,0.8",
+                  "ComponentPlacement": "d.Panel3",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "Please note there is an unpaid production break between {Data.PeriodBreaks}"
+                  },
+                  "Border": ";;;;;;;solid:0,0,0",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "TextOptions": {
+                    "WordWrap": true
+                  },
+                  "Type": "Expression",
+                  "TextQuality": "Wysiwyg",
+                  "AllowHtmlTags": true
+                },
+                "19": {
+                  "Ident": "StiText",
+                  "Name": "Text49",
+                  "Guid": "6b5db8b1308dc8a96ddd2fb1280c0499",
+                  "CanShrink": true,
+                  "CanGrow": true,
+                  "GrowToHeight": true,
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "0,9,17.8,0.8",
+                  "ComponentPlacement": "d.Panel3",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "but subject always to Clause 7.2 and Schedule A of the Agreement."
+                  },
+                  "Border": ";;;;;;;solid:0,0,0",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "TextOptions": {
+                    "WordWrap": true
+                  },
+                  "Type": "Expression",
+                  "TextQuality": "Wysiwyg",
+                  "AllowHtmlTags": true
+                },
+                "20": {
+                  "Ident": "StiText",
+                  "Name": "Text50",
+                  "Guid": "fc06208e7933903df44c83513dffec78",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "0,9.8,4.6,0.6",
+                  "ComponentPlacement": "d.Panel3",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "2. REMUNERATION:"
+                  },
+                  "Font": ";9;Bold;",
+                  "Border": ";;;;;;;solid:0,0,0",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression"
+                },
+                "21": {
+                  "Ident": "StiText",
+                  "Name": "Text51",
+                  "Guid": "b3d93303e05eb9547bc0230af35b2614",
+                  "CanGrow": true,
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "0,10.6,12.6,0.6",
+                  "ComponentPlacement": "d.Panel3",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "{Data.TotalHours} hour Agreement rate: (Level {Data.Level}):"
+                  },
+                  "Border": ";;;;;;;solid:Black",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression"
+                },
+                "22": {
+                  "Ident": "StiText",
+                  "Name": "Text52",
+                  "Guid": "ecdd636b8dd475870d651221930fc429",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "14.2,10.6,3.4,0.6",
+                  "ComponentPlacement": "d.Panel3",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "{Data.AgreedRate}"
+                  },
+                  "Border": ";;;;;;;solid:Black",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression"
+                },
+                "23": {
+                  "Ident": "StiText",
+                  "Name": "Text53",
+                  "Guid": "fcf16631c40255149a92e3b5aba1d753",
+                  "CanGrow": true,
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "0,11.2,12.6,0.6",
+                  "ComponentPlacement": "d.Panel3",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "Premium above Agreement:"
+                  },
+                  "Border": ";;;;;;;solid:Black",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression"
+                },
+                "24": {
+                  "Ident": "StiText",
+                  "Name": "Text54",
+                  "Guid": "e457f79ae8327f641592f795e60d2ef7",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "14.2,11.2,3.4,0.6",
+                  "ComponentPlacement": "d.Panel3",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "{Data.Premium}"
+                  },
+                  "Border": ";;;;;;;solid:Black",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression"
+                },
+                "25": {
+                  "Ident": "StiText",
+                  "Name": "Text55",
+                  "Guid": "a49880cc36bdc0d6acf174efe015dc6a",
+                  "CanGrow": true,
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "0,12,12.6,0.6",
+                  "ComponentPlacement": "d.Panel3",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "<b>Total {Data.WeekDays} day/{Data.TotalHours} hour Gross Agreed Weekly Fee (the \"Wage\")</b>"
+                  },
+                  "Border": ";;;;;;;solid:Black",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression",
+                  "TextQuality": "Wysiwyg",
+                  "AllowHtmlTags": true
+                },
+                "26": {
+                  "Ident": "StiText",
+                  "Name": "Text56",
+                  "Guid": "a00ce4cb1c3b781e894f809e750fa67c",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "14.2,12,3.4,0.6",
+                  "ComponentPlacement": "d.Panel3",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "{Data.WeeklyAvg}"
+                  },
+                  "Border": ";;;;;;;solid:Black",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression"
+                },
+                "27": {
+                  "Ident": "StiText",
+                  "Name": "Text57",
+                  "Guid": "987066a9f04db79bf14386999b55ff9d",
+                  "CanGrow": true,
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "0,12.8,12.6,0.6",
+                  "ComponentPlacement": "d.Panel3",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "Base Hourly Rate (for all overtime)"
+                  },
+                  "Border": ";;;;;;;solid:Black",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression"
+                },
+                "28": {
+                  "Ident": "StiText",
+                  "Name": "Text58",
+                  "Guid": "596573d9318c7a8c36d5065b9fe11802",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "14.2,12.8,3.4,1",
+                  "ComponentPlacement": "d.Panel3",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "{Data.IncOvertime}"
+                  },
+                  "Border": ";;;;;;;solid:Black",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "TextOptions": {
+                    "WordWrap": true
+                  },
+                  "Type": "Expression"
+                },
+                "29": {
+                  "Ident": "StiText",
+                  "Name": "Text59",
+                  "Guid": "92b760ed32471177e7ab7da7e6c06a80",
+                  "CanShrink": true,
+                  "CanGrow": true,
+                  "GrowToHeight": true,
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "0,13.8,17.8,1.4",
+                  "ComponentPlacement": "d.Panel3",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "A week comprises {Data.WeekDays} x {Data.DayHours} hour days worked on consecutive days between Monday and Sunday. The Production Company has the right to change the Employee's scheduled workdays and the Employee will still be paid the Agreed Weekly Rate so long as the Employee does not work more than {Data.WeekDays} x {Data.DayHours} hr days."
+                  },
+                  "Border": ";;;;;;;solid:0,0,0",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "TextOptions": {
+                    "WordWrap": true
+                  },
+                  "Type": "Expression",
+                  "TextQuality": "Wysiwyg",
+                  "AllowHtmlTags": true,
+                  "TextFormat": {
+                    "Ident": "StiCustomFormatService"
+                  }
+                },
+                "30": {
+                  "Ident": "StiImage",
+                  "Name": "Image1",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "10.8,5.6,5.4,1.8",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Border": "All;;;;;;;solid:Black",
+                  "Brush": "solid:",
+                  "Stretch": true,
+                  "DataColumn": "Data.userSig"
+                }
+              }
+            }
+          },
+          "DataSourceName": "Data"
+        }
+      },
+      "PaperSize": "A4Plus",
+      "PageWidth": 21.0,
+      "PageHeight": 33.0,
+      "Watermark": {
+        "TextBrush": "solid:50,0,0,0"
+      },
+      "Margins": {
+        "Left": 1.0,
+        "Right": 1.0,
+        "Top": 1.0,
+        "Bottom": 1.0
+      },
+      "ReportUnit": {
+        "Ident": "StiCentimetersUnit"
+      }
+    },
+    "1": {
+      "Ident": "StiPage",
+      "Name": "Page2",
+      "Guid": "390335999b75647cd3254a7675f8cb2d",
+      "Interaction": {
+        "Ident": "StiInteraction"
+      },
+      "Border": ";;2;;;;;solid:Black",
+      "Brush": "solid:",
+      "Components": {
+        "0": {
+          "Ident": "StiPanel",
+          "Name": "Panel8",
+          "Guid": "72fe9fe731c44f558359610d93769caf",
+          "MinSize": "0,0",
+          "MaxSize": "0,0",
+          "ClientRectangle": "0.6,0.4,17.8,26.4",
+          "Interaction": {
+            "Ident": "StiInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:",
+          "Components": {
+            "0": {
+              "Ident": "StiText",
+              "Name": "Text65",
+              "Guid": "fe7ad105d46941f98a627039aa2c3d00",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "0,1.8,4.2,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "4. SPECIAL CONDITIONS"
+              },
+              "Font": ";;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "1": {
+              "Ident": "StiText",
+              "Name": "Text66",
+              "Guid": "dab9f7211969434884e16b7f055275cb",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "0,2.6,5.6,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "4.1. Employer's Policies and Procedures"
+              },
+              "Font": ";;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "2": {
+              "Ident": "StiText",
+              "Name": "Text67",
+              "Guid": "609e81c9f86c41bebe465cc154622627",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "0,3.2,17.8,0.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "The Employee is required to comply with the Employer's policies and procedures as they relate to the Employee's employment as varied\r\nfrom time to time.Time Such policies and procedures do not form part of the Employee's contract of employment."
+              },
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "3": {
+              "Ident": "StiText",
+              "Name": "Text68",
+              "Guid": "babb687da28e4a6c8855000c22ea819e",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "0,4.2,3,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "4.2 Superannuation"
+              },
+              "Font": ";;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "4": {
+              "Ident": "StiText",
+              "Name": "Text69",
+              "Guid": "af1fe15d441540d38823d60efee22677",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "0,4.8,17.8,0.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "The Employer will pay into a complying superannuation fund nominated by the Employee (\"Fund\") the amount required by the agreement."
+              },
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "5": {
+              "Ident": "StiText",
+              "Name": "Text70",
+              "Guid": "f755f1d171364767975eb37a03f7a0c0",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "0,5.8,9.8,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "5 CONFIDENTIAL INFORMATION AND INTELLECTUAL PROPERTY RIGHTS:"
+              },
+              "Font": ";;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "6": {
+              "Ident": "StiText",
+              "Name": "Text71",
+              "Guid": "3ef3ec3c775540ccbfb76492a87dde3c",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "0,6.6,4,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "5.1 Confidential Information"
+              },
+              "Font": ";;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "7": {
+              "Ident": "StiText",
+              "Name": "Text72",
+              "Guid": "e27cb46ec9cb41e4822916de8a991eb0",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "0,7,17.8,0.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "You must not, at any time during or after your employment with the Employer (except as may be necessary to perform your duties and\r\nobligations or as authorised by the Employer) disclose either directly or indirectly, knowingly or inadvertently:"
+              },
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "8": {
+              "Ident": "StiText",
+              "Name": "Text73",
+              "Guid": "a61092aab92f41188a7d75555ee720c9",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "0,8,17.8,1.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "(a)   any knowledge, information, material and technology (including all copies) concerning the Employer or any related body corporate\r\n      (Endemol Shine Group) or its and their business affairs, clients, and property and which includes the secrets of the Employer and \r\n      and the Endemol Shine Group including its and their productions, formats, television programmes, websites, other items of content, \r\n      trade secrets and commercial terms for the provision of services to or from third parties;"
+              },
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "9": {
+              "Ident": "StiText",
+              "Name": "Text74",
+              "Guid": "379788973b8a4ef18b305b554eb1f220",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "0,9.6,17.8,0.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "(b)   any personal information about any participant or cast member of the Production or any director, employee, agent or consultant of\r\n       the Employer or any other entity within the Endemol Shine Group that has not been officially released to the public; or"
+              },
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "10": {
+              "Ident": "StiText",
+              "Name": "Text75",
+              "Guid": "554cfff1766c431f82aa919d37ebd1b1",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "0,10.6,17.8,1.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "(c)   any photograph, recording, script or any other information about the 'on-screen' or 'behind the scenes' actitivities of the\r\n       Production that has not been officially released to the public, including any filming location,\r\n\r\n       (together, the Confidential Information)."
+              },
+              "Font": ";;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "11": {
+              "Ident": "StiText",
+              "Name": "Text76",
+              "Guid": "0955560c78fd471f860190a46ceb87e6",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "0,12.4,17.8,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "You acknowledge and agree that You are not permitted to publish, or procure or encourge publication, of any Confidential Information via any\r\nform or media whatsoever (including any website or social media such as Facebook, Instagram, Twitter or YouTube) nor make any statement \r\nabout Production to any third party, including any representative of any media outlet, without the prior written consent of the Employer. "
+              },
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "12": {
+              "Ident": "StiText",
+              "Name": "Text77",
+              "Guid": "4c9707cfeccf4b70bb60ecaf079f82c0",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "0,13.8,4.2,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "5.2 Intellectual property rights"
+              },
+              "Font": ";;Bold;",
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "13": {
+              "Ident": "StiText",
+              "Name": "Text78",
+              "Guid": "b5971a5ac3d946c0a99cacaca50bf3b4",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "0,14.4,17.8,2",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "You:\r\n\r\n(a)   acknowledge that all intellectual property rights in any Confidential information belonging to or relating to the Employer and the\r\n       Endemol Shine Group (whether tangible or intangible and whether in documentary or computerised form) that has not been previously \r\n       disclosed to the general public and all modifications and enhancements to that Confidential Information are owned by the Employer \r\n       or a member of the Endemol Shine Group (as the case may be); "
+              },
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "14": {
+              "Ident": "StiText",
+              "Name": "Text61",
+              "Guid": "efa7aed57b2c44a5a0807338bdb7e971",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "0,16.6,17.8,1.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "(b)   acknowlede that any and all results and proceeds of your employment, including all materials that have been or are made, prepared or\r\n       contributed to by you, or provided to the Employer or the Endemol Shine Group by you in connection with your employment (Work) and \r\n       rights in and to the Work, including all copyright (and all extensions and renewals of that copyright), trade mark and patents and \r\n       any and all other intellectual property rights in and to the Work (Rights) are owned by the Employer or a member of the Endemol \r\n       Shine Group (as the case may be);"
+              },
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "15": {
+              "Ident": "StiText",
+              "Name": "Text62",
+              "Guid": "c77f3d735d244babb1ba0459896ded20",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "0,18.6,17.8,0.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "(c)   to the extent not covered in clause 5.2(b), irrevocably assign the Rights to the Employer for use in any and all media whether now \r\n       known or subsequently created throughout the world in perpetuity without restriction;"
+              },
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "16": {
+              "Ident": "StiText",
+              "Name": "Text63",
+              "Guid": "e032ca4d6db049ff89cecb9ddae4a162",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "0,19.6,17.8,0.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "(d)   must immediately disclose to the Employer (and to no other person) all the details of any Work or intellectual property rights in the Work;"
+              },
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "17": {
+              "Ident": "StiText",
+              "Name": "Text104",
+              "Guid": "631f5273a317425fa8a89a00fbf97eea",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "0,20.2,17.8,1.4",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "(e)   must, both during and after your employment by the Employer, do all such acts and things as the Employer may reasonably request\r\n       to secure to the Employer or any member of the Endemol Shine Group ownership or registration rights in the Work and the Rights, \r\n       and you grant to the Employer and each member of the Endemol Shine Group the right to use your name to obtain any protection of\r\n       the Works and/or the Rights; and"
+              },
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "18": {
+              "Ident": "StiText",
+              "Name": "Text106",
+              "Guid": "9e7d11cb97f440ffbb39c115d09cb22f",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "0,21.8,17.8,1",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "(f)   must not, both during and after your employment with the Employer, engage in any conduct which may damage the Employer's or any \r\n       member of the Endemol Shine Group's intellectual property rights."
+              },
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "TextBrush": "solid:Black",
+              "Type": "Expression"
+            },
+            "19": {
+              "Ident": "StiRichText",
+              "Name": "RichText1",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "0,0,17.8,1.6",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Text": {
+                "Value": "__LP___x005C_rtf1_x005C_ansi_x005C_ansicpg1252_x005C_deff0_x005C_nouicompat_x005C_deflang1033__LP___x005C_fonttbl__LP___x005C_f0_x005C_fnil_x005C_fcharset0_x0020_Arial_x003B___RP____RP___x000D__x000A___LP___x005C__x002A__x005C_generator_x0020_Riched20_x0020_10.0.15063__RP___x005C_viewkind4_x005C_uc1_x0020__x000D__x000A__x005C_pard_x005C_fs17_x0020_Taxation_x0020_payable_x0020_to_x0020_the_x0020_Australian_x0020_Taxation_x0020_Office_x0020_pursuant_x0020_to_x0020_the_x0020_P.A.Y.G._x0020_scheme_x0020_will_x0020_be_x0020_deducted_x0020_from_x0020_the_x0020_Wage._x0020_If_x0020_the_x0020_Employee_x0020_wishes_x0020_to_x0020_claim_x0020_the_x0020_general_x0020_exemption_x0020_rebate_x0020_or_x0020_dependent_x0020_rebate_x0020_for_x0020_taxation_x0020_purposes_x0020_an_x0020_A.T.O_x005C_b_x0020_._x0020_Employment_x0020_Declaration_x0020__x005C_b0_x0020_Form_x0020_must_x0020_be_x0020_completed._x0020_The_x0020_Employer_x0020_is_x0020_required_x0020_to_x0020_deduct_x0020_tax_x0020_at_x0020_the_x0020_full_x0020_rate_x0020_unless_x0020_notified_x0020_of_x0020_the_x0020_Employee_x0027_s_x0020_Tax_x0020_File_x0020_Number_x0020_and_x0020_an_x0020_Employment_x0020_Declaration_x0020_Form_x0020_is_x0020_completed._x0020__x005C_par_x000D__x000A___RP___x000D__x000A_"
+              },
+              "Border": ";174,171,171;;;;;;solid:Black",
+              "BackColor": "Transparent"
+            }
+          }
+        }
+      },
+      "PageWidth": 21.0,
+      "PageHeight": 29.7,
+      "Watermark": {
+        "TextBrush": "solid:50,0,0,0"
+      },
+      "Margins": {
+        "Left": 1.0,
+        "Right": 1.0,
+        "Top": 1.0,
+        "Bottom": 1.0
+      },
+      "ReportUnit": {
+        "Ident": "StiCentimetersUnit"
+      }
+    },
+    "2": {
+      "Ident": "StiPage",
+      "Name": "Page3",
+      "Guid": "210e1ec2712c04c58ca9fcc4618434d5",
+      "Interaction": {
+        "Ident": "StiInteraction"
+      },
+      "Border": ";;2;;;;;solid:Black",
+      "Brush": "solid:",
+      "Components": {
+        "0": {
+          "Ident": "StiDataBand",
+          "Name": "DataBand4",
+          "ClientRectangle": "0,0.4,19,27",
+          "Interaction": {
+            "Ident": "StiBandInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:",
+          "Components": {
+            "0": {
+              "Ident": "StiPanel",
+              "Name": "Panel5",
+              "Guid": "b3105f1aad1643d69b1d03df7f766d4c",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "0.6,0.2,17.8,26.2",
+              "ComponentPlacement": "p.Page3",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Border": ";;;;;;;solid:0,0,0",
+              "Brush": "solid:",
+              "Components": {
+                "0": {
+                  "Ident": "StiText",
+                  "Name": "Text79",
+                  "Guid": "f7ba3af3062e475890b2326477ebfe34",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "0,0.4,17.6,4.8",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "You:\r\n\r\n(a)  consent to the Work being changed, copied, edited, added to, taken from and/or adapted in any manner or context by\r\n      the Employer or any member of the Endemol Shine Group, and any person authorised by the Employer or any member of \r\n      the Endemol Shine Group to do so, for any purpose notwithstanding that such conduct may amount to derogatory treatment\r\n      of the Work within the meaning of the Copyright Act 1968 (Cth);\r\n\r\n(b)  consent to the non-observance of your right of attribution of authorship on or in connection with the Work; and\r\n\r\n(c)  acknowledge that the consents in clauses 5.3 (a) & (b) are genuinely given by the you and are not given because\r\n      any person:\r\n\r\n      (i)  applied duress to you (or your representative) to give that consent; or\r\n      (ii) made a false and misleading statement to you in relation to the giving of that consent."
+                  },
+                  "Border": ";;;;;;;solid:Black",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression"
+                },
+                "1": {
+                  "Ident": "StiText",
+                  "Name": "Text80",
+                  "Guid": "1924a9c9785f4afa95201ccfa54191e5",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "0,0,4.4,0.4",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "5.3 Moral Rights"
+                  },
+                  "Font": ";;Bold;",
+                  "Border": ";;;;;;;solid:Black",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression"
+                },
+                "2": {
+                  "Ident": "StiText",
+                  "Name": "Text81",
+                  "Guid": "ff52e735aad046b48f02f1affe9a0b35",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "0,5.4,4.4,0.4",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "6. TERMINATION"
+                  },
+                  "Font": ";9;Bold;",
+                  "Border": ";;;;;;;solid:Black",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression"
+                },
+                "3": {
+                  "Ident": "StiText",
+                  "Name": "Text82",
+                  "Guid": "45930c68fc2b424ba5056d56247d89f4",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "0,6,4.4,0.4",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "6.1 Termination"
+                  },
+                  "Font": ";;Bold;",
+                  "Border": ";;;;;;;solid:Black",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression"
+                },
+                "4": {
+                  "Ident": "StiText",
+                  "Name": "Text83",
+                  "Guid": "a33f1430b6da473890ba56659458555c",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "0,6.4,17.8,1",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "Due to the casual nature of the Employee's employment, the Employee's employment will automatically terminate at the cessation of each shift \r\nof work undertaken by the Employee."
+                  },
+                  "Border": ";;;;;;;solid:Black",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression"
+                },
+                "5": {
+                  "Ident": "StiText",
+                  "Name": "Text84",
+                  "Guid": "433d6336fe9d4a789383d445688e8753",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "0,7.4,4.4,0.4",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "6.2 Summary dismissal"
+                  },
+                  "Font": ";;Bold;",
+                  "Border": ";;;;;;;solid:Black",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression"
+                },
+                "6": {
+                  "Ident": "StiText",
+                  "Name": "Text85",
+                  "Guid": "19b3b3b5d6c74100b96378a654fc8462",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "0,8,17.8,1",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "The Employer may terminate the Employee's employment prior to conclusion of the shift of work the Employee is employed to undertake\r\nif the Employee engages in serious or wilful misconduct without notice or payment in lieu of notice to the Employee."
+                  },
+                  "Border": ";;;;;;;solid:Black",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression"
+                },
+                "7": {
+                  "Ident": "StiText",
+                  "Name": "Text87",
+                  "Guid": "e889cbe8b1bf44ffb0a54f111cad5615",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "0,9.2,4.4,0.4",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "7 RETURN OF PROPERTY"
+                  },
+                  "Font": ";;Bold;",
+                  "Border": ";;;;;;;solid:Black",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression"
+                },
+                "8": {
+                  "Ident": "StiText",
+                  "Name": "Text88",
+                  "Guid": "d06fc3a2ef80481293fbced7d593952b",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "0,9.8,17.8,1",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "Upon request by the Employer, the Employee must deliver up all of the Employer's property including but not limited to computers (fixed or\r\nportable including mobile devices), documents, records or papers in the Employee's possession or control relating in any way to the business or \r\naffairs of the Employer or member of the Endemol Shine Group, and must not retain a copy (hard or electronic) of any such document. "
+                  },
+                  "Border": ";;;;;;;solid:Black",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression"
+                },
+                "9": {
+                  "Ident": "StiText",
+                  "Name": "Text89",
+                  "Guid": "9c51fb8aa420435b8cc70c018be0655f",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "0,11.2,4.4,0.4",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "8. COUNTERPARTS"
+                  },
+                  "Font": ";;Bold;",
+                  "Border": ";;;;;;;solid:Black",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression"
+                },
+                "10": {
+                  "Ident": "StiText",
+                  "Name": "Text90",
+                  "Guid": "6af76af02c1c465d998246ec10caeb73",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "0,11.8,17.8,1",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "This Contract may be executed in any number of counterparts (which taken together shall constitute the one instrument), including by returning \r\na correctly signed counterpart by email in 'PDF' or other readable electronic format to the Employer for collation and the collated copy of the \r\nexecuted contract shall constitute a valid record of the terms agreed."
+                  },
+                  "Border": ";;;;;;;solid:Black",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression"
+                },
+                "11": {
+                  "Ident": "StiText",
+                  "Name": "Text108",
+                  "Guid": "90a0243c2ac14cfca35c22070a865ebd",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "0,13.6,3.6,0.4",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "SIGNATURES"
+                  },
+                  "Font": ";;Bold;",
+                  "Border": ";;;;;;;solid:Black",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression"
+                },
+                "12": {
+                  "Ident": "StiText",
+                  "Name": "Text109",
+                  "Guid": "d0d0596218094a3c916009db6288f645",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "0,14.2,5.6,0.6",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "SIGNED FOR AND ON BEHALF OF\r\nTHE EMPLOYER:"
+                  },
+                  "Border": ";;;;;;;solid:Black",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression"
+                },
+                "13": {
+                  "Ident": "StiText",
+                  "Name": "Text110",
+                  "Guid": "860e7a679138448c8bd1d9eb7bf9988c",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "7.8,15,3,0.4",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "(Signature of Employer)"
+                  },
+                  "Font": ";7;;",
+                  "Border": ";;;;;;;solid:Black",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression"
+                },
+                "14": {
+                  "Ident": "StiText",
+                  "Name": "Text111",
+                  "Guid": "41cdb0f76d6a4327a2f927e74d0329c1",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "0,16.6,5.6,0.6",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "SIGNED BY THE EMPLOYEE:"
+                  },
+                  "Border": ";;;;;;;solid:Black",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression"
+                },
+                "15": {
+                  "Ident": "StiText",
+                  "Name": "Text112",
+                  "Guid": "b87b5c8ff4174f0f8ca6dc38048fa7d6",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "0,18.2,5.6,0.6",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "DATED:"
+                  },
+                  "Border": ";;;;;;;solid:Black",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression"
+                },
+                "16": {
+                  "Ident": "StiText",
+                  "Name": "Text113",
+                  "Guid": "9c020acd550048b68d18517a81def85b",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "7.8,18.2,5.4,0.6",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "{Data.eSigDate}"
+                  },
+                  "Border": "Bottom;;;;;;;solid:Black",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "DataColumn",
+                  "TextFormat": {
+                    "Ident": "StiDateFormatService"
+                  }
+                },
+                "17": {
+                  "Ident": "StiImage",
+                  "Name": "Image2",
+                  "Guid": "d623f046c1fe4d5dac5149f45d23bd03",
+                  "CanGrow": true,
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "7.8,14.2,5.4,0.8",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Border": "Bottom;;;;;;;solid:Black",
+                  "Brush": "solid:",
+                  "DataColumn": "Data.signature01"
+                },
+                "18": {
+                  "Ident": "StiImage",
+                  "Name": "Image3",
+                  "Guid": "42ce5d73ce4043838c2491f64c4fa8c9",
+                  "CanGrow": true,
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "7.8,16.6,5.4,0.6",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Border": "Bottom;;;;;;;solid:Black",
+                  "Brush": "solid:",
+                  "DataColumn": "Data.userSig"
+                }
+              }
+            }
+          },
+          "DataSourceName": "Data"
+        }
+      },
+      "PageWidth": 21.0,
+      "PageHeight": 29.7,
+      "Watermark": {
+        "TextBrush": "solid:50,0,0,0"
+      },
+      "Margins": {
+        "Left": 1.0,
+        "Right": 1.0,
+        "Top": 1.0,
+        "Bottom": 1.0
+      },
+      "ReportUnit": {
+        "Ident": "StiCentimetersUnit"
+      }
+    },
+    "3": {
+      "Ident": "StiPage",
+      "Name": "Page4",
+      "Guid": "eab35e9431f163ecd9720b59c8731499",
+      "Interaction": {
+        "Ident": "StiInteraction"
+      },
+      "Border": ";;2;;;;;solid:Black",
+      "Brush": "solid:",
+      "Components": {
+        "0": {
+          "Ident": "StiDataBand",
+          "Name": "DataBand3",
+          "ClientRectangle": "0,0.4,19,21.2",
+          "Interaction": {
+            "Ident": "StiBandInteraction"
+          },
+          "Border": ";;;;;;;solid:Black",
+          "Brush": "solid:",
+          "Components": {
+            "0": {
+              "Ident": "StiPanel",
+              "Name": "Panel6",
+              "MinSize": "0,0",
+              "MaxSize": "0,0",
+              "ClientRectangle": "0.8,0.6,17.4,19.8",
+              "Interaction": {
+                "Ident": "StiInteraction"
+              },
+              "Border": ";;;;;;;solid:Black",
+              "Brush": "solid:",
+              "Components": {
+                "0": {
+                  "Ident": "StiText",
+                  "Name": "Text86",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "6.6,0.6,4.8,0.6",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "SCHEDULE A"
+                  },
+                  "HorAlignment": "Center",
+                  "Font": ";12;Bold;",
+                  "Border": ";;;;;;;solid:0,0,0",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression"
+                },
+                "1": {
+                  "Ident": "StiText",
+                  "Name": "Text91",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "6.2,1.4,5.8,0.6",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "HIRE OF VEHICLE/EQUIPMENT"
+                  },
+                  "HorAlignment": "Center",
+                  "Font": ";10;Bold;",
+                  "Border": ";;;;;;;solid:0,0,0",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression"
+                },
+                "2": {
+                  "Ident": "StiText",
+                  "Name": "Text92",
+                  "Guid": "5d7e27c8f16210239eebe0ab3e445abd",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "0.4,2.6,5.8,0.6",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "1. &nbsp; &nbsp;EQUIPMENT PERIOD OF HIRE"
+                  },
+                  "Font": ";10;Bold;",
+                  "Border": ";;;;;;;solid:0,0,0",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression",
+                  "TextQuality": "Wysiwyg",
+                  "AllowHtmlTags": true,
+                  "Margins": {
+                    "Right": 1.0
+                  }
+                },
+                "3": {
+                  "Ident": "StiText",
+                  "Name": "Text93",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "0,3.6,3.8,2",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "No. of weeks:\r\nNo of days:\r\nCommencing on:\r\nCeasing on:\r\nWeekly hire fee (5 day week):\r\nDaily hire fee (if applicable):\r\n"
+                  },
+                  "Border": ";;;;;;;solid:0,0,0",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression"
+                },
+                "4": {
+                  "Ident": "StiText",
+                  "Name": "Text94",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "7.8,3.6,2.8,2.2",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "{Data.EqNoWeeks}\r\n{Data.EqNoDays}\r\n{Data.EqCommDate}\r\n{Data.EqFinishDate}\r\n{Data.EqWeeklyRate}\r\n{Data.EqDailyRate}"
+                  },
+                  "Border": ";;;;;;;solid:0,0,0",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression"
+                },
+                "5": {
+                  "Ident": "StiText",
+                  "Name": "Text95",
+                  "Guid": "c8d753367a8652ceca1d2b704ead3573",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "0,6.4,3.8,2",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "Description of equipment:<div><ul><li>{Data.EqDesc}</li><li>{Data.EqDesc2}</li><li>{Data.EqDesc3}</li></ul><div><br></div><div></div></div>"
+                  },
+                  "Border": ";;;;;;;solid:0,0,0",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "TextOptions": {
+                    "WordWrap": true
+                  },
+                  "Type": "Expression",
+                  "TextQuality": "Wysiwyg",
+                  "AllowHtmlTags": true
+                },
+                "6": {
+                  "Ident": "StiText",
+                  "Name": "Text96",
+                  "Guid": "28de4a30dd89a628763703b04984bfe1",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "0.4,9,5.8,0.6",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "2. &nbsp; VEHICLE PERIOD OF HIRE"
+                  },
+                  "Font": ";10;Bold;",
+                  "Border": ";;;;;;;solid:0,0,0",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression",
+                  "TextQuality": "Wysiwyg",
+                  "AllowHtmlTags": true,
+                  "Margins": {
+                    "Right": 1.0
+                  }
+                },
+                "7": {
+                  "Ident": "StiText",
+                  "Name": "Text97",
+                  "Guid": "1d2ac2bcdf17b03982c057679f57431b",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "0,10,3.8,2",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "No. of weeks:\r\nNo of days:\r\nCommencing on:\r\nCeasing on:\r\nWeekly hire fee (5 day week):\r\nDaily hire fee (if applicable):\r\n"
+                  },
+                  "Border": ";;;;;;;solid:0,0,0",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression"
+                },
+                "8": {
+                  "Ident": "StiText",
+                  "Name": "Text98",
+                  "Guid": "2eee65eee7f8c598b34042a01d171570",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "7.8,10,2.8,2.2",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "{Data.VeNoWeeks}\r\n{Data.VeNoDays}\r\n{Data.VeCommDate}\r\n{Data.VeFinishDate}\r\n{Data.VeWeeklyRate}\r\n{Data.VeDailyRate}"
+                  },
+                  "Border": ";;;;;;;solid:0,0,0",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression"
+                },
+                "9": {
+                  "Ident": "StiText",
+                  "Name": "Text99",
+                  "Guid": "53120f7b26a4b1de4aea4533b7d07cce",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "0,12.4,3.8,1.4",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "Registration No:\r\nVehicle Make:\r\nVehicle Model:\r\nDescription of equipment:"
+                  },
+                  "Border": ";;;;;;;solid:0,0,0",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression"
+                },
+                "10": {
+                  "Ident": "StiText",
+                  "Name": "Text100",
+                  "Guid": "381c8029de50c4a5d3326af9c02db12a",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "7.8,12.4,2.8,1",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "{Data.VeReg}\r\n{Data.VeMake}\r\n{Data.VeModel}\r\n"
+                  },
+                  "Border": ";;;;;;;solid:0,0,0",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression"
+                },
+                "11": {
+                  "Ident": "StiText",
+                  "Name": "Text101",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "2,14,3.2,0.8",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "<ul><li>{Data.VeDesc}</li></ul>"
+                  },
+                  "Border": ";;;;;;;solid:0,0,0",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression",
+                  "TextQuality": "Wysiwyg",
+                  "AllowHtmlTags": true
+                },
+                "12": {
+                  "Ident": "StiText",
+                  "Name": "Text103",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "0,15.4,4,0.6",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "3.   PETROL ALLOWANCE"
+                  },
+                  "Font": ";;Bold;",
+                  "Border": ";;;;;;;solid:Black",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression",
+                  "TextQuality": "Wysiwyg",
+                  "AllowHtmlTags": true
+                },
+                "13": {
+                  "Ident": "StiText",
+                  "Name": "Text102",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "0,16,17,1",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "{Data.PetrolAllow}"
+                  },
+                  "Border": ";;;;;;;solid:0,0,0",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "TextOptions": {
+                    "WordWrap": true
+                  },
+                  "Type": "Expression"
+                },
+                "14": {
+                  "Ident": "StiText",
+                  "Name": "Text105",
+                  "Guid": "bde732c6640b6672ebd18aed1895c5a9",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "0,17.2,5,0.6",
+                  "ComponentPlacement": "p.Panel5",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "4.   MOBILE PHONE ALLOWANCE"
+                  },
+                  "Font": ";9;Bold;",
+                  "Border": ";;;;;;;solid:0,0,0",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "Type": "Expression"
+                },
+                "15": {
+                  "Ident": "StiText",
+                  "Name": "Text107",
+                  "Guid": "0ee127f6598dbdef8a2ab5bafd29c2e2",
+                  "MinSize": "0,0",
+                  "MaxSize": "0,0",
+                  "ClientRectangle": "0,17.8,17,1.6",
+                  "Interaction": {
+                    "Ident": "StiInteraction"
+                  },
+                  "Text": {
+                    "Value": "{Data.MobileAllow}"
+                  },
+                  "Border": ";;;;;;;solid:0,0,0",
+                  "Brush": "solid:",
+                  "TextBrush": "solid:Black",
+                  "TextOptions": {
+                    "WordWrap": true
+                  },
+                  "Type": "Expression"
+                }
+              }
+            }
+          }
+        }
+      },
+      "PageWidth": 21.0,
+      "PageHeight": 29.7,
+      "Watermark": {
+        "TextBrush": "solid:50,0,0,0"
+      },
+      "Margins": {
+        "Left": 1.0,
+        "Right": 1.0,
+        "Top": 1.0,
+        "Bottom": 1.0
+      },
+      "ReportUnit": {
+        "Ident": "StiCentimetersUnit"
+      }
+    }
+  }
+}
